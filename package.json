@@ -5,7 +5,8 @@
   "main": "vite.config.js",
   "scripts": {
     "start": "vite",
-    "lint": "eslint src/**/*.js,",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
     "test": "jest",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
