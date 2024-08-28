@@ -1,11 +1,11 @@
-// import { resolve } from "path";
+import { resolve } from 'path';
 
-// export default {
-//   root: resolve(__dirname, "src"),
-//   build: {
-//     outDir: "../dist",
-//   },
-//   server: {
-//     port: 8080,
-//   },
-// };
+export default {
+  root: resolve(__dirname, 'src'),
+  build: {
+    outDir: '../dist',
+  },
+  server: {
+    port: 8080,
+  },
+};
