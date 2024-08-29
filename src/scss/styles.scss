@@ -3,3 +3,15 @@ $secondary: #4d455d;
 
 // Import all of Bootstrap's CSS
 @import 'bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Merriweather', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Poppins', Arial, sans-serif;
+}
