@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,6 +7,51 @@
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand h2 text-uppercase letter-spacing text-white"
+            href="#"
+            ><img
+              src="./images/biddable-white.png"
+              alt="Bootstrap"
+              width="30"
+              height="24"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarToggler"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/feed/index.html">Feed</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div class="container py-4 px-3 mx-auto">
       <h1>Hello, Bootstrap and Vite!</h1>
       <button class="btn btn-primary">Primary button</button>
