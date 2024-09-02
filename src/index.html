@@ -58,22 +58,94 @@
       </nav>
     </header>
     <main>
-      <div
+      <section
         class="container-fluid d-flex vh-100 justify-content-center align-items-center"
       >
-        <div class="card card-size text-center bg-tertiary">
+        <div class="card hero-size text-center bg-tertiary">
           <div class="card-body d-flex flex-column justify-content-center">
             <h5 class="card-title">What are you looking for?</h5>
-            <div class="input-group mt-3">
+            <div class="mx-auto searchWidth">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Enter your search here.."
+                aria-label="Search"
+                id="searchBar"
+                name="searchBar"
               />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h5 class="text-center mt-5 border-bottom">Featured Listings</h5>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="container d-flex flex-wrap justify-content-center">
+            <div class="col-lg-3 col-md-4 mx-4 mb-2">
+              <div class="card h-100">
+                <img
+                  src="./images/gyrados.jpeg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mx-4 mb-2">
+              <div class="card h-100">
+                <img
+                  src="./images/gyrados.jpeg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mx-4 mb-2">
+              <div class="card h-100">
+                <img
+                  src="./images/gyrados.jpeg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer>
+      <div class="container-fluid bg-secondary text-center py-2">
+        <p class="text-white">&copy; 2021 Biddable. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
