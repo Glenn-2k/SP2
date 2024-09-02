@@ -1,8 +1,18 @@
 $primary: #7db9b6;
 $secondary: #4d455d;
+$tertiary: #f5e9cf;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  // Add your custom tertiary color here
+);
 
 // Import all of Bootstrap's CSS
 @import 'bootstrap/scss/bootstrap';
+
+// Custom styles
 
 body {
   font-family: 'Merriweather', Arial, sans-serif;
@@ -14,4 +24,9 @@ h3,
 h4,
 h5 {
   font-family: 'Poppins', Arial, sans-serif;
+}
+
+.card-size {
+  width: 40rem;
+  height: 25rem;
 }
