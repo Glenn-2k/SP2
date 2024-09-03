@@ -1,12 +1,13 @@
 $primary: #7db9b6;
 $secondary: #4d455d;
 $tertiary: #f5e9cf;
+$info: #e96479;
 
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
   'tertiary': $tertiary,
-  // Add your custom tertiary color here
+  'info': $info,
 );
 
 // Import all of Bootstrap's CSS
