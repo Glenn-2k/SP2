@@ -214,9 +214,11 @@
       tabindex="-1"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content bg-tertiary">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="userModalToggleLabel">Modal 1</h1>
+            <h1 class="modal-title fs-5 text-center" id="userModalToggleLabel">
+              Login
+            </h1>
             <button
               type="button"
               class="btn-close"
@@ -225,7 +227,42 @@
             ></button>
           </div>
           <div class="modal-body">
-            Show a second modal and hide this one with the button below.
+            <form id="loginForm" class="was-validated">
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label fw-medium mb-0"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="inputEmail"
+                  required
+                  placeholder="Enter your email"
+                />
+                <div class="invalid-feedback text-primary">
+                  Please enter a valid email.
+                </div>
+              </div>
+              <div class="mb-1">
+                <label for="inputPassword" class="form-label fw-medium mb-0"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  id="inputPassword"
+                  required
+                  minlength="8"
+                  placeholder="Please type your password"
+                />
+                <div class="invalid-feedback text-primary">
+                  Your password must be at least 8 letters.
+                </div>
+              </div>
+              <div class="col-6"></div>
+            </form>
           </div>
           <div class="modal-footer">
             <button
@@ -233,7 +270,10 @@
               data-bs-target="#userModalToggle2"
               data-bs-toggle="modal"
             >
-              Open second modal
+              Login
+            </button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Register
             </button>
           </div>
         </div>
