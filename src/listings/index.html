@@ -193,7 +193,13 @@
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" class="btn btn-primary">Place bid</a>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#specificListingModal"
+                    >Place bid</a
+                  >
                 </div>
               </div>
             </div>
@@ -580,6 +586,71 @@
             >
               Close
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="specificListingModal"
+      tabindex="-1"
+      aria-labelledby="specificListingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-tertiary">
+          <div class="modal-header">
+            <h5 class="modal-title" id="specificListingModalLabel">
+              Pokemon card
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Pokemon Card"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-md-8">
+                <h6>Seller:</h6>
+                <p>Name Nameson</p>
+                <h6>Description:</h6>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  gravida est vel enim luctus consectetur eget ac eros.
+                </p>
+                <h6>Time left on auction:</h6>
+                <p>12d 4h 23m 59s</p>
+                <h6>Highest bidder:</h6>
+                <p class="highest-bidder">Batman</p>
+                <h6>Bidding history:</h6>
+                <ul class="bidder-list">
+                  <li>Batman 1 credit</li>
+                  <li>Joker 1 credit</li>
+                  <li>Robin 1 credit</li>
+                  <li>Harley Quinn 1 credit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your bid"
+                aria-label="Bid amount"
+              />
+              <button class="btn btn-primary" type="button">Submit bid</button>
+            </div>
           </div>
         </div>
       </div>

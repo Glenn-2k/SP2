@@ -47,3 +47,22 @@ h5 {
 .modal-header {
   border-bottom: none;
 }
+
+.modal-body {
+  padding: 20px;
+}
+.highest-bidder {
+  font-weight: bold;
+  background-color: #343a40;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+.bidder-list {
+  list-style: none;
+  padding-left: 0;
+}
+.bidder-list li {
+  padding: 2px 0;
+}
