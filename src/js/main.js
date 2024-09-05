@@ -8,8 +8,10 @@ import * as bootstrap from 'bootstrap';
 // Import custom JS
 
 import router from './router';
-import { getListings } from './api/listings/getListings.js';
+// import { getListings } from './api/listings/getListings.js';
+// import { getListing } from './api/listings/getListing.js';
 
 router();
 
-getListings();
+// getListings();
+// getListing();
