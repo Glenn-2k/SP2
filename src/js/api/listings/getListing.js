@@ -1,14 +1,19 @@
-// import { API_BASE, API_AUCTIONS } from '../constants';
+import { API_BASE, API_AUCTIONS } from '../constants';
 
-// const listings = '/listings';
+const listings = '/listings';
 
-// export async function getListing(id) {
-//   try {
-//     const url = `${API_BASE}${API_AUCTIONS}${listings}/${id}`;
-//     const response = await fetch(url);
+export async function getListing(id) {
+  try {
+    const url = `${API_BASE}${API_AUCTIONS}${listings}/${id}`;
+    const response = await fetch(url);
 
-//     const json = await response.json();
+    console.log(response);
 
-//     return json.data;
-//   } catch (error) {}
-// }
+    const json = await response.json();
+
+    return json.data;
+  } catch (error) {
+    console.error('getListing', error);
+    return null;
+  }
+}
