@@ -9,9 +9,11 @@ import * as bootstrap from 'bootstrap';
 
 import router from './router';
 import { getListings } from './api/listings/getListings.js';
-import { getListing } from './api/listings/getListing.js';
+import { renderListings } from './renders/renderListings.js';
+// import { getListing } from './api/listings/getListing.js';
 
 router();
 
 getListings();
-getListing();
+renderListings();
+// getListing();
