@@ -8,15 +8,11 @@ export default function router() {
 
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
-  } else if (path === '/profile/index.html' || path === '/profile') {
+  } else if (path === '/profile/index.html' || path === '/profile/') {
     console.log('Profile page');
-  } else if (path === '/lisings/index.html' || path === '/listings') {
+  } else if (path === '/listings/index.html' || path === '/listings/') {
     console.log('Listings page');
     getListings();
     renderListings();
   }
-
-  getListings();
-  renderListings();
-  // getListing();
 }
