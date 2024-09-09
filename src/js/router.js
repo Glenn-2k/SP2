@@ -1,4 +1,5 @@
 import { getListings } from './api/listings/getListings';
+import { renderLimitListings } from './renders/renderLimitListings';
 import { renderListings } from './renders/renderListings';
 
 export default function router() {
@@ -8,6 +9,7 @@ export default function router() {
 
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
+    renderLimitListings();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
