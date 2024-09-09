@@ -66,3 +66,11 @@ h5 {
 .bidder-list li {
   padding: 2px 0;
 }
+
+.cardImageSize {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}

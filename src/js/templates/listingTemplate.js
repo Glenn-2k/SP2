@@ -6,9 +6,9 @@ export function listingTemplate(data) {
   card.classList.add('card', 'h-100');
 
   const cardImage = document.createElement('img');
-  cardImage.classList.add('card-img-top');
-  cardImage.src = data.media[0]?.url;
-  cardImage.alt = data.media[0]?.alt;
+  cardImage.classList.add('card-img-top', 'cardImageSize');
+  cardImage.src = data.media[0]?.url || 'https://placehold.co/350x200';
+  cardImage.alt = data.media[0]?.alt || 'Placeholder Image';
 
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
