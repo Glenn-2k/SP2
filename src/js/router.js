@@ -1,3 +1,4 @@
+import { login } from './api/auth/login';
 import { getListings } from './api/listings/getListings';
 import { renderLimitListings } from './renders/renderLimitListings';
 import { renderListings } from './renders/renderListings';
@@ -10,6 +11,7 @@ export default function router() {
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
     renderLimitListings();
+    login();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
