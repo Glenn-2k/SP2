@@ -19,12 +19,10 @@ export default function router() {
     loginFormListener();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
-
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
     console.log('Listings page');
     loginFormListener();
-
     getListings();
     renderListings();
   }
