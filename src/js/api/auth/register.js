@@ -1,7 +1,6 @@
 import { API_BASE, API_AUTH, API_REGISTER } from '../constants';
-
-const method = 'POST';
 /* eslint-disable no-undef */
+const method = 'POST';
 export async function register(name, email, password) {
   const registerURL = API_BASE + API_AUTH + API_REGISTER;
 

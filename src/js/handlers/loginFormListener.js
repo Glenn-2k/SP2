@@ -11,9 +11,7 @@ export function loginFormListener() {
     const profile = Object.fromEntries(formData.entries());
     console.log(profile);
 
-    const { email, password } = profile;
-
-    if (email && password) {
+    if (profile) {
       try {
         const user = await login(profile);
         console.log('User logged in:', user);
@@ -23,8 +21,5 @@ export function loginFormListener() {
     } else {
       console.error('Email or password is missing');
     }
-
-    // sending the profile object to the register function
-    login(profile);
   });
 }
