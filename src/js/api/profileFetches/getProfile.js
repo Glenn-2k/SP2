@@ -4,8 +4,6 @@ import { API_URL, API_AUCTIONS } from '../constants';
 const method = 'GET';
 const action = '/profiles';
 
-/* eslint-disable no-useless-catch */
-
 export async function getProfile(profileName) {
   try {
     const response = await authFetch(
@@ -15,6 +13,7 @@ export async function getProfile(profileName) {
 
     return response.json();
   } catch (error) {
+    console.error('Failed to fetch profile:', error);
     throw error;
   }
 }
