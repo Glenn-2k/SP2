@@ -1,4 +1,5 @@
-export async function profileTemplate() {
+export async function profileTemplate(data) {
+  console.log(data);
   const profileWrapper = document.createElement('div');
   profileWrapper.classList.add('container', 'mt-5', 'text-center');
 
@@ -24,7 +25,7 @@ export async function profileTemplate() {
 
   const profileName = document.createElement('h3');
   profileName.classList.add('mt-3');
-  profileName.textContent = 'John Doe';
+  profileName.textContent = data.name;
 
   const profileCreditsListed = document.createElement('p');
   profileCreditsListed.classList.add('text-body-secondary');

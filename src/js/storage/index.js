@@ -5,7 +5,7 @@ export function save(key, value) {
 export function load(key) {
   try {
     const value = localStorage.getItem(key);
-    return JSON.parse(value);
+    return value ? JSON.parse(value) : null;
   } catch {
     return null;
   }
