@@ -10,12 +10,11 @@ export async function renderProfileListings() {
 
   const storedProfile = load('profile');
   const storedProfileName = storedProfile.name;
-  //   console.log('storedProfileName:', storedProfile);
-  // Hvis profilnavn ikke finnes i localStorage, omdiriger til login
-  //   if (!storedProfileName) {
-  //     window.location.href = '/';
-  //     return;
-  //   }
+
+  if (!storedProfileName) {
+    window.location.href = '/';
+    return;
+  }
 
   try {
     const profileListings = await getProfileListings(storedProfileName);
