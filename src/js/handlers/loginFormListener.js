@@ -15,6 +15,10 @@ export function loginFormListener() {
       try {
         const user = await login(profile);
         console.log('User logged in:', user);
+
+        if (user) {
+          window.location.reload();
+        }
       } catch (error) {
         console.error('Login failed', error);
       }
