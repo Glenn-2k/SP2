@@ -7,6 +7,7 @@ import { registerFormListener } from './handlers/registerFormListener';
 import { renderLimitListings } from './renders/renderLimitListings';
 import { renderListings } from './renders/renderListings';
 import { renderProfile } from './renders/renderProfile';
+import { renderProfileListings } from './renders/renderProfileListings';
 
 export default function router() {
   console.log('router.js');
@@ -22,6 +23,7 @@ export default function router() {
     loginFormListener();
     registerFormListener();
     renderProfile();
+    renderProfileListings();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
     console.log('Listings page');
