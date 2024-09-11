@@ -3,7 +3,7 @@
 // import { register } from './api/auth/register';
 import { getListings } from './api/listings/getListings';
 import { loginFormListener } from './handlers/loginFormListener';
-import { registerFormListener } from './handlers/register';
+import { registerFormListener } from './handlers/registerFormListener';
 import { renderLimitListings } from './renders/renderLimitListings';
 import { renderListings } from './renders/renderListings';
 

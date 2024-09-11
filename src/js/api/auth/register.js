@@ -8,7 +8,6 @@ export async function register(name, email, password) {
   const response = await fetch(registerURL, {
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
     },
     method,
     body,
