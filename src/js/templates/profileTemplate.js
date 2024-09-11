@@ -11,10 +11,20 @@ export async function profileTemplate(data) {
 
   const profileAvatar = document.createElement('img');
   profileAvatar.classList.add('rounded-circle', 'mb-4', 'profile-avatar');
-  profileAvatar.src = 'https://placehold.co/150x150';
+  profileAvatar.src = data.avatar.url;
+  if (
+    data.avatar.url === null ||
+    data.avatar.url === '' ||
+    data.avatar.url === undefined ||
+    data.avatar.url ===
+      'https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400'
+  ) {
+    profileAvatar.src = '../images/placeholderProfile.svg';
+  }
   profileAvatar.alt = 'Profile Avatar';
 
   const changeAvatarButton = document.createElement('button');
+  changeAvatarButton.textContent = 'Change Avatar';
   changeAvatarButton.classList.add(
     'btn',
     'btn-primary',
@@ -23,16 +33,17 @@ export async function profileTemplate(data) {
     'mx-auto',
   );
 
-  const profileName = document.createElement('h3');
-  profileName.classList.add('mt-3');
+  const profileName = document.createElement('h4');
+  profileName.classList.add('mt-5');
   profileName.textContent = data.name;
 
   const profileCreditsListed = document.createElement('p');
   profileCreditsListed.classList.add('text-body-secondary');
+  profileCreditsListed.textContent = `Listed Credits: ${data.credits} | Listed items: ${data._count.listings}`;
 
   const newListingButton = document.createElement('button');
   newListingButton.classList.add('btn', 'btn-primary', 'mt-4', 'mb-5');
-  newListingButton.textContent = 'New Listing';
+  newListingButton.textContent = '\u002B New Listing';
   newListingButton.dataset.bsToggle = 'modal';
   newListingButton.dataset.bsTarget = '#newListingModal';
 
