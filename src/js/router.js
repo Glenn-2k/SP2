@@ -2,6 +2,7 @@
 // import { login } from './api/auth/login';
 // import { register } from './api/auth/register';
 import { getListings } from './api/listings/getListings';
+import { getProfile } from './api/profileFetches/getProfile';
 import { loginFormListener } from './handlers/loginFormListener';
 import { registerFormListener } from './handlers/registerFormListener';
 import { renderLimitListings } from './renders/renderLimitListings';
@@ -20,6 +21,7 @@ export default function router() {
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
     registerFormListener();
+    getProfile();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
     console.log('Listings page');
