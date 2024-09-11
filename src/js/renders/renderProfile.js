@@ -6,6 +6,8 @@ export async function renderProfile() {
   const storedProfile = load('profile');
   const storedProfileName = storedProfile.name;
 
+  console.log('storedProfileName:', storedProfileName);
+
   // Hvis profilnavn ikke finnes i localStorage, omdiriger til login
   if (!storedProfileName) {
     window.location.href = '/';

@@ -1,5 +1,4 @@
 // import { login } from './api/auth/login';
-// import { login } from './api/auth/login';
 // import { register } from './api/auth/register';
 import { getListings } from './api/listings/getListings';
 import { loginFormListener } from './handlers/loginFormListener';
