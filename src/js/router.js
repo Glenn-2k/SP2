@@ -8,6 +8,7 @@ import { renderLimitListings } from './renders/renderLimitListings';
 import { renderListings } from './renders/renderListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
+import { renderProfileWins } from './renders/renderProfileWins';
 
 export default function router() {
   console.log('router.js');
@@ -25,6 +26,7 @@ export default function router() {
     registerFormListener();
     renderProfile();
     renderProfileListings();
+    renderProfileWins();
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
