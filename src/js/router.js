@@ -16,9 +16,9 @@ export default function router() {
 
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
+    loginFormListener();
     renderLimitListings();
     registerFormListener();
-    loginFormListener();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
