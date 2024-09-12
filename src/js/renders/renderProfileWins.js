@@ -1,10 +1,10 @@
-import { getProfileListings } from '../api/profileFetches/getProfileListings';
+import { getProfileWins } from '../api/profileFetches/getProfileWins';
 import { load } from '../storage';
 import { listingTemplate } from '../templates/listingTemplate';
 
 export async function renderProfileWins() {
-  const profileListingsContainer = document.getElementById('myWinsContainer');
-  profileListingsContainer.innerHTML = '';
+  const myWinsContainer = document.getElementById('myWinsContainer');
+  myWinsContainer.innerHTML = '';
 
   const storedProfile = load('profile');
   const storedProfileName = storedProfile.name;
@@ -15,20 +15,20 @@ export async function renderProfileWins() {
   }
 
   try {
-    const profileListings = await getProfileListings(storedProfileName);
+    const myWins = await getProfileWins(storedProfileName);
 
-    console.log('Profile Listings:', profileListings);
+    console.log('myWins:', myWins);
 
-    const listingsArray = profileListings.data.listings;
+    const winningsArray = myWins.data;
 
-    if (listingsArray.length === 0) {
-      profileListingsContainer.innerHTML = '<h2>No wins yet😔</h2>';
+    if (winningsArray.length === 0) {
+      myWinsContainer.innerHTML = '<h2>No wins yet.. 😔</h2>';
       return;
     }
 
-    listingsArray.forEach((data) => {
+    winningsArray.forEach((data) => {
       const listingCard = listingTemplate(data);
-      profileListingsContainer.append(listingCard);
+      myWinsContainer.append(listingCard);
       console.log(data);
     });
   } catch (error) {
