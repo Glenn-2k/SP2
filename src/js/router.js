@@ -5,6 +5,7 @@ import { loginFormListener } from './handlers/loginFormListener';
 import { logout } from './handlers/logout';
 import { registerFormListener } from './handlers/registerFormListener';
 import { searchFunction } from './handlers/searchFunction';
+import { updateAvatar } from './handlers/updateAvatarListener';
 import { initPage } from './helpers/isSearchActive';
 import { renderLimitListings } from './renders/renderLimitListings';
 // import { renderListings } from './renders/renderListings';
@@ -31,6 +32,7 @@ export default function router() {
     renderProfile();
     renderProfileListings();
     renderProfileWins();
+    updateAvatar();
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
