@@ -25,6 +25,8 @@ export async function profileTemplate(data) {
 
   const changeAvatarButton = document.createElement('button');
   changeAvatarButton.textContent = 'Change Avatar';
+  changeAvatarButton.dataset.bsToggle = 'modal';
+  changeAvatarButton.dataset.bsTarget = '#avatarModal';
   changeAvatarButton.classList.add(
     'btn',
     'btn-primary',
