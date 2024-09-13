@@ -1,6 +1,6 @@
 import { load } from '../storage';
 
-export function updateAvatar() {
+export function updateAvatarImage() {
   const form = document.getElementById('avatarForm');
 
   form.addEventListener('submit', async (event) => {
@@ -26,7 +26,7 @@ export function updateAvatar() {
     };
 
     try {
-      const response = await updateAvatar(storedProfileName, avatarData);
+      const response = await updateAvatarImage(storedProfileName, avatarData);
       console.log('Avatar updated:', response);
       location.reload();
     } catch (error) {
