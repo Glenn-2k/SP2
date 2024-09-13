@@ -4,11 +4,14 @@ import { getListings } from './api/listings/getListings';
 import { loginFormListener } from './handlers/loginFormListener';
 import { logout } from './handlers/logout';
 import { registerFormListener } from './handlers/registerFormListener';
+import { searchFunction } from './handlers/searchFunction';
+import { initPage } from './helpers/isSearchActive';
 import { renderLimitListings } from './renders/renderLimitListings';
-import { renderListings } from './renders/renderListings';
+// import { renderListings } from './renders/renderListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
 import { renderProfileWins } from './renders/renderProfileWins';
+// import { searchResults } from './renders/renderSearch';
 
 export default function router() {
   console.log('router.js');
@@ -20,6 +23,7 @@ export default function router() {
     loginFormListener();
     renderLimitListings();
     registerFormListener();
+    searchFunction();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
@@ -33,8 +37,10 @@ export default function router() {
     console.log('Listings page');
     loginFormListener();
     getListings();
-    renderListings();
+    // renderListings();
     registerFormListener();
+    initPage();
+    // searchResults();
     logout();
   }
 }
