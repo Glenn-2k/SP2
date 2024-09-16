@@ -1,6 +1,7 @@
 // import { login } from './api/auth/login';
 // import { register } from './api/auth/register';
 import { getListings } from './api/listings/getListings';
+import { createListingsHandler } from './handlers/createListings';
 import { loginFormListener } from './handlers/loginFormListener';
 import { logout } from './handlers/logout';
 import { registerFormListener } from './handlers/registerFormListener';
@@ -33,6 +34,7 @@ export default function router() {
     renderProfileListings();
     renderProfileWins();
     updateAvatarHandler();
+    createListingsHandler();
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {

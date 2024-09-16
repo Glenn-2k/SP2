@@ -8,11 +8,27 @@ const headers = {
   'X-Noroff-API-Key': API_KEY,
 };
 
-export async function authFetch(url, options = {}) {
+export async function authFetch(url, options = {}, fetchMethod = 'GET') {
+  // console.log(options);
+  // console.log(options.body);
   return fetch(url, {
-    ...options,
     headers: headers,
     body: JSON.stringify(options.body),
+    method: fetchMethod,
+  });
+}
+
+export async function authFetchNewListing(
+  url,
+  options = {},
+  fetchMethod = 'GET',
+) {
+  // console.log(options);
+  // console.log(options.body);
+  return fetch(url, {
+    headers: headers,
+    body: JSON.stringify(options),
+    method: fetchMethod,
   });
 }
 
