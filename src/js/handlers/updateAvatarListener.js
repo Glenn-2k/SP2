@@ -1,32 +1,18 @@
+import { updateAvatarFetch } from '../api/profileFetches/updateAvatar';
 import { load } from '../storage';
 
-export function updateAvatarImage() {
+export function updateAvatarHandler() {
   const form = document.getElementById('avatarForm');
 
   form.addEventListener('submit', async (event) => {
+    console.log('Avatar form submitted');
     event.preventDefault();
-
-    const avatarUrlInput = document.getElementById('avatarUrlInput');
-
-    const avatarUrl = avatarUrlInput.value;
-
-    if (!avatarUrl) {
-      console.error('Avatar URL is required');
-      return;
-    }
 
     const storedProfile = load('profile');
     const storedProfileName = storedProfile.name;
 
-    const avatarData = {
-      avatar: {
-        url: avatarUrl,
-        alt: 'User avatar',
-      },
-    };
-
     try {
-      const response = await updateAvatarImage(storedProfileName, avatarData);
+      const response = await updateAvatarFetch(storedProfileName);
       console.log('Avatar updated:', response);
       location.reload();
     } catch (error) {
