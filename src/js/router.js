@@ -26,6 +26,7 @@ export default function router() {
     renderLimitListings();
     registerFormListener();
     searchFunction();
+    createListingsHandler();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
@@ -41,6 +42,7 @@ export default function router() {
     console.log('Listings page');
     loginFormListener();
     getListings();
+    createListingsHandler();
     // renderListings();
     registerFormListener();
     initPage();
