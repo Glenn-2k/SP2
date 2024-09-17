@@ -9,8 +9,6 @@ const headers = {
 };
 
 export async function authFetch(url, options = {}, fetchMethod = 'GET') {
-  // console.log(options);
-  // console.log(options.body);
   return fetch(url, {
     headers: headers,
     body: JSON.stringify(options.body),
@@ -23,8 +21,6 @@ export async function authFetchNewListing(
   options = {},
   fetchMethod = 'GET',
 ) {
-  // console.log(options);
-  // console.log(options.body);
   return fetch(url, {
     headers: headers,
     body: JSON.stringify(options),

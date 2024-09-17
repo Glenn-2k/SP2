@@ -1,3 +1,5 @@
+import { renderSpecificListing } from '../renders/renderSpecificListing';
+
 export function listingTemplate(data) {
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add('col-lg-3', 'col-md-4', 'mx-4', 'mb-2');
@@ -27,8 +29,13 @@ export function listingTemplate(data) {
 
   const bidButton = document.createElement('a');
   bidButton.classList.add('btn', 'btn-primary');
+  bidButton.dataset.bsToggle = 'modal';
+  bidButton.dataset.bsTarget = '#auctionModal';
   bidButton.href = '#';
   bidButton.textContent = 'Bid Now';
+  bidButton.addEventListener('click', () => {
+    renderSpecificListing(data.id);
+  });
 
   cardBody.append(cardTitle, cardTimeLeft, cardText, bidButton);
 
