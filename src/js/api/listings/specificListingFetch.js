@@ -14,7 +14,7 @@ const action = '/listings';
 export async function authFetchId(id) {
   try {
     const response = await authFetch(
-      `${API_BASE}${API_AUCTIONS}${action}/${id}`,
+      `${API_BASE}${API_AUCTIONS}${action}/${id}?_seller=true&_bids=true`,
       {
         headers: headers,
       },
