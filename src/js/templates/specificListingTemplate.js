@@ -120,6 +120,8 @@ export function specificListingTemplate(data) {
     input.type = 'text';
     input.classList.add('form-control');
     input.placeholder = 'Enter amount';
+    input.name = 'bidAmount';
+    input.id = 'bidAmount';
 
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
