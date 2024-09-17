@@ -50,20 +50,29 @@ export function specificListingTemplate(data) {
     const timeLeftLabel = document.createElement('strong');
     timeLeftLabel.textContent = 'Time left on auction:';
     const timeLeftValue = document.createElement('span');
-    timeLeftValue.id = data.endsAt;
+    timeLeftValue.textContent = data.endsAt;
 
     timeLeft.append(timeLeftLabel, timeLeftValue);
 
-    const highestBidder = document.createElement('div');
-    highestBidder.classList.add('mt-3');
+    const latestBidder = document.createElement('div');
+    latestBidder.classList.add('mt-3');
 
-    const highestBidderLabel = document.createElement('strong');
-    highestBidderLabel.textContent = 'Highest bidder:';
-    const highestBidderButton = document.createElement('button');
-    highestBidderButton.classList.add('btn', 'btn-secondary', 'btn-sm');
-    highestBidderButton.textContent = 'Batman';
+    const latestBidderLabel = document.createElement('strong');
+    latestBidderLabel.textContent = 'Latest bidder:';
+    const latestBidderButton = document.createElement('button');
+    latestBidderButton.classList.add('btn', 'btn-secondary', 'btn-sm');
 
-    highestBidder.append(highestBidderLabel, highestBidderButton);
+    const bids = data.bids;
+    let bidder;
+    if (bids.length > 0) {
+      const firstBid = bids[0];
+      bidder = firstBid.bidder;
+    } else {
+      bidder = { name: 'No bids yet' };
+    }
+    latestBidderButton.textContent = bidder.name;
+
+    latestBidder.append(latestBidderLabel, latestBidderButton);
 
     const biddingHistory = document.createElement('div');
     biddingHistory.classList.add('mt-3');
@@ -108,7 +117,7 @@ export function specificListingTemplate(data) {
       imageContainer,
       sellerDescription,
       timeLeft,
-      highestBidder,
+      latestBidder,
       biddingHistory,
       bidForm,
     );
