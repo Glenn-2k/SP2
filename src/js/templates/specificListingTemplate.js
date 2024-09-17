@@ -63,14 +63,20 @@ export function specificListingTemplate(data) {
     latestBidderButton.classList.add('btn', 'btn-secondary', 'btn-sm');
 
     const bids = data.bids || [];
-    let bidder;
-    if (bids.length > 0) {
-      const firstBid = bids[0];
-      bidder = firstBid.bidder;
+    let latestBidderList;
+    let bidder = { name: 'No bids yet' };
+
+    const sortedBids = bids.sort(
+      (a, b) => new Date(b.created) - new Date(a.created),
+    );
+
+    if (sortedBids.length > 0) {
+      const mostRecentBid = sortedBids[0];
+      latestBidderList = mostRecentBid.bidder;
     } else {
-      bidder = { name: 'No bids yet' };
+      latestBidderList = bidder;
     }
-    latestBidderButton.textContent = bidder.name;
+    latestBidderButton.textContent = latestBidderList.name;
 
     latestBidder.append(latestBidderLabel, latestBidderButton);
 
@@ -82,7 +88,7 @@ export function specificListingTemplate(data) {
     const biddingHistoryList = document.createElement('ul');
     biddingHistoryList.classList.add('list-unstyled');
 
-    const limitBids = bids.slice(0, 5).reverse();
+    const limitBids = bids.slice(0, 5);
 
     if (limitBids.length > 0) {
       limitBids.forEach((bid) => {
