@@ -82,12 +82,23 @@ export function specificListingTemplate(data) {
     const biddingHistoryList = document.createElement('ul');
     biddingHistoryList.classList.add('list-unstyled');
 
-    const bidders = ['Batman', 'Joker', 'Robin', 'Harley Quinn'];
-    bidders.forEach((bidder) => {
+    const limitBids = bids.slice(0, 5).reverse();
+
+    if (limitBids.length > 0) {
+      limitBids.forEach((bid) => {
+        const listItem = document.createElement('li');
+        const bidderName = bid.bidder?.name;
+        const bidAmount = bid.amount || 0;
+
+        listItem.textContent = `${bidderName} - ${bidAmount} credits`;
+
+        biddingHistoryList.append(listItem);
+      });
+    } else {
       const listItem = document.createElement('li');
-      listItem.textContent = `${bidder} 1 credit`;
+      listItem.textContent = 'No bidding history yet';
       biddingHistoryList.append(listItem);
-    });
+    }
 
     biddingHistory.append(biddingHistoryLabel, biddingHistoryList);
 
