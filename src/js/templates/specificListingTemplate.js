@@ -62,7 +62,7 @@ export function specificListingTemplate(data) {
     const latestBidderButton = document.createElement('button');
     latestBidderButton.classList.add('btn', 'btn-secondary', 'btn-sm');
 
-    const bids = data.bids;
+    const bids = data.bids || [];
     let bidder;
     if (bids.length > 0) {
       const firstBid = bids[0];
