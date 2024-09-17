@@ -26,7 +26,7 @@ export async function createListingsHandler() {
           if (!response) {
             console.error('Failed to create listing');
           }
-          // window.location.reload();
+          window.location.reload();
         } catch (error) {
           console.error('Failed to create listing:', error);
         }

@@ -19,7 +19,7 @@ export async function authFetch(url, options = {}, fetchMethod = 'GET') {
 export async function authFetchNewListing(
   url,
   options = {},
-  fetchMethod = 'GET',
+  fetchMethod = 'POST',
 ) {
   return fetch(url, {
     headers: headers,
