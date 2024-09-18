@@ -1,7 +1,6 @@
 import { authFetchBid } from '../api/authFetch';
 import { API_BASE, API_AUCTIONS } from '../api/constants';
 
-/* eslint-disable no-undef */
 export async function placeBid(id) {
   const amountInput = document.getElementById('bidAmount');
 
@@ -15,19 +14,8 @@ export async function placeBid(id) {
 
   try {
     await authFetchBid(url, amountOfBid);
-    // location.reload();
+    location.reload();
   } catch (error) {
     console.log('Failed to place bid:', error);
   }
-}
-
-const form = document.getElementById('bidForm');
-
-if (form) {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    await placeBid(id);
-  });
-} else {
-  console.error('Bid form not found');
 }

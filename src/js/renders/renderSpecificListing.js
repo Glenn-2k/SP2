@@ -7,5 +7,14 @@ export async function renderSpecificListing(id) {
 
   specificListingTemplate(listingData);
 
-  placeBid();
+  const form = document.getElementById('bidForm');
+
+  if (form) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      await placeBid(id);
+    });
+  } else {
+    console.error('Bid form not found');
+  }
 }
