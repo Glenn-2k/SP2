@@ -66,15 +66,7 @@ export async function authFetchUpdate(url) {
   }
 }
 
-export async function authFetchBid(url) {
-  const amountInput = document.getElementById('bidAmount');
-  const amount = parseInt(amountInput.value);
-
-  if (isNaN(amount) || amount <= 0) {
-    alert('Please enter a valid bid amount.');
-    return;
-  }
-
+export async function authFetchBid(url, amount) {
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -87,17 +79,16 @@ export async function authFetchBid(url) {
     if (!response.ok) {
       const errorData = await response.json();
       console.error('Failed to place bid:', errorData);
-      alert(`Failed to place bid: ${errorData.message || response.status}`);
       return;
     }
 
-    const data = await console.log('Bid placed:', data);
+    const data = await response.json();
+    console.log('Bid placed:', data);
     alert('Bid placed successfully');
 
     return data;
   } catch (error) {
-    console.error('Failed to place bid:', error);
-    alert('Failed to place bid');
+    console.log('Failed to place bid:', error);
     throw new Error(error);
   }
 }

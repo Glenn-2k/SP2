@@ -13,6 +13,7 @@ import { renderLimitListings } from './renders/renderLimitListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
 import { renderProfileWins } from './renders/renderProfileWins';
+// import { placeBid } from './handlers/placeBid';
 // import { searchResults } from './renders/renderSearch';
 
 export default function router() {
@@ -27,6 +28,7 @@ export default function router() {
     registerFormListener();
     searchFunction();
     createListingsHandler();
+    // placeBid();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
     loginFormListener();
@@ -36,6 +38,7 @@ export default function router() {
     renderProfileWins();
     updateAvatarHandler();
     createListingsHandler();
+    // placeBid();
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
@@ -46,6 +49,7 @@ export default function router() {
     // renderListings();
     registerFormListener();
     initPage();
+    // placeBid();
     // searchResults();
     logout();
   }

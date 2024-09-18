@@ -112,12 +112,13 @@ export function specificListingTemplate(data) {
     bidForm.classList.add('mt-3');
 
     const form = document.createElement('form');
+    form.id = 'bidForm';
 
     const inputGroup = document.createElement('div');
     inputGroup.classList.add('input-group');
 
     const input = document.createElement('input');
-    input.type = 'text';
+    input.type = 'number';
     input.classList.add('form-control');
     input.placeholder = 'Enter amount';
     input.name = 'bidAmount';
