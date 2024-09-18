@@ -23,7 +23,6 @@ export async function placeBid(id, data) {
 
   try {
     await authFetchBid(url, amountOfBid);
-    // displaySuccessMessage('Bid placed successfully');
     location.reload();
   } catch (error) {
     console.error('Failed to place bid:', error);
