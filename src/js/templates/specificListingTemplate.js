@@ -124,6 +124,10 @@ export function specificListingTemplate(data) {
     input.name = 'bidAmount';
     input.id = 'bidAmount';
 
+    const errorMessageElement = document.createElement('div');
+    errorMessageElement.id = 'bidErrorMessage';
+    errorMessageElement.style.display = 'none';
+
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
     submitButton.classList.add('btn', 'btn-primary');
@@ -140,6 +144,7 @@ export function specificListingTemplate(data) {
       latestBidder,
       biddingHistory,
       bidForm,
+      errorMessageElement,
     );
 
     modalContent.append(modalHeader, modalBody);

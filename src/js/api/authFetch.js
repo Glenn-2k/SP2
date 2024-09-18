@@ -83,6 +83,16 @@ export async function authFetchBid(url, amount) {
     }
 
     const data = await response.json();
+
+    if (!response.ok) {
+      if (response.status === 400 && data.errors && data.errors.amount) {
+        // This is likely a "bid too low" error
+        throw new Error(data.errors.amount);
+      } else {
+        throw new Error(data.message || 'Failed to place bid');
+      }
+    }
+
     console.log('Bid placed:', data);
     alert('Bid placed successfully');
 

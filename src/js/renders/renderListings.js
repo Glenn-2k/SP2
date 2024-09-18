@@ -10,7 +10,6 @@ export async function renderListings() {
     listings.forEach((data) => {
       const listingCard = listingTemplate(data);
       listingsContainer.append(listingCard);
-      console.log(data);
     });
   } catch (error) {
     console.error(error);
