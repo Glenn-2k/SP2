@@ -21,7 +21,7 @@ export function notLoggedIn(token) {
     notLoggedInButton.classList.add('btn', 'btn-primary', 'mt-4', 'mb-5');
     notLoggedInButton.textContent = 'Log in';
     notLoggedInButton.dataset.bsToggle = 'modal';
-    notLoggedInButton.dataset.bsTarget = '#loginModal';
+    notLoggedInButton.dataset.bsTarget = '#loginModalToggle';
     notLoggedInCol.append(notLoggedInMessage, notLoggedInButton);
     notLoggedInRow.append(notLoggedInCol);
     notLoggedIn.append(notLoggedInRow);
