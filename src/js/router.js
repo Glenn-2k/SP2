@@ -1,5 +1,3 @@
-// import { login } from './api/auth/login';
-// import { register } from './api/auth/register';
 import { getListings } from './api/listings/getListings';
 import { createListingsHandler } from './handlers/createListings';
 import { loginFormListener } from './handlers/loginFormListener';
@@ -8,13 +6,14 @@ import { registerFormListener } from './handlers/registerFormListener';
 import { searchFunction } from './handlers/searchFunction';
 import { updateAvatarHandler } from './handlers/updateAvatarListener';
 import { initPage } from './helpers/isSearchActive';
+import { notLoggedIn } from './helpers/notLoggedIn';
 import { renderLimitListings } from './renders/renderLimitListings';
-// import { renderListings } from './renders/renderListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
 import { renderProfileWins } from './renders/renderProfileWins';
-// import { placeBid } from './handlers/placeBid';
-// import { searchResults } from './renders/renderSearch';
+import { load } from './storage';
+
+const token = load('token');
 
 export default function router() {
   console.log('router.js');
@@ -28,9 +27,11 @@ export default function router() {
     registerFormListener();
     searchFunction();
     createListingsHandler();
-    // placeBid();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
+    if (!notLoggedIn(token)) {
+      return;
+    }
     loginFormListener();
     registerFormListener();
     renderProfile();
@@ -38,7 +39,6 @@ export default function router() {
     renderProfileWins();
     updateAvatarHandler();
     createListingsHandler();
-    // placeBid();
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
@@ -46,11 +46,8 @@ export default function router() {
     loginFormListener();
     getListings();
     createListingsHandler();
-    // renderListings();
     registerFormListener();
     initPage();
-    // placeBid();
-    // searchResults();
     logout();
   }
 }
