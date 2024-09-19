@@ -37,10 +37,8 @@ export function notLoggedInText(token) {
 export function notLoggedInButton(token) {
   if (!token) {
     const newListingButton = document.getElementById('newListingButton');
-    newListingButton.classList.add('d-none');
-
-    return true;
+    if (newListingButton) {
+      newListingButton.classList.add('d-none');
+    }
   }
-
-  return false;
 }

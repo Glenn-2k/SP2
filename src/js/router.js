@@ -42,7 +42,7 @@ export default function router() {
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
-    if (!notLoggedInButton(token)) {
+    if (notLoggedInButton(token)) {
       return;
     }
     console.log('Listings page');
