@@ -13,7 +13,7 @@ export function listingTemplate(data) {
   cardImage.alt = data.media[0]?.alt || 'Placeholder Image';
 
   const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
+  cardBody.classList.add('card-body', 'd-flex', 'flex-column');
 
   const cardTitle = document.createElement('h5');
   cardTitle.classList.add('card-title');
@@ -28,7 +28,7 @@ export function listingTemplate(data) {
   cardText.textContent = data.description;
 
   const bidButton = document.createElement('a');
-  bidButton.classList.add('btn', 'btn-primary');
+  bidButton.classList.add('btn', 'btn-primary', 'mt-auto');
   bidButton.dataset.bsToggle = 'modal';
   bidButton.dataset.bsTarget = '#auctionModal';
   bidButton.href = '#';
