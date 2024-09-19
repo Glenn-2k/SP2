@@ -11,7 +11,11 @@ export function specificListingTemplate(data) {
 
     const modalTitle = document.createElement('h5');
     modalTitle.id = 'auctionModalLabel';
-    modalTitle.classList.add('modal-title');
+    modalTitle.classList.add(
+      'modal-title',
+      'border-bottom',
+      'border-secondary',
+    );
     modalTitle.textContent = data.title;
 
     const modalCloseButton = document.createElement('button');
