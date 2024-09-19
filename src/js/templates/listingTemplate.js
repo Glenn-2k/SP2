@@ -19,9 +19,9 @@ export function listingTemplate(data) {
   cardTitle.classList.add('card-title');
   cardTitle.textContent = data.title;
 
-  const cardTimeLeft = document.createElement('p');
-  cardTimeLeft.classList.add('text-body-secondary');
-  cardTimeLeft.textContent = `Time Left: ${data.endsAt}`;
+  const cardEndsAt = document.createElement('p');
+  cardEndsAt.classList.add('text-body-secondary');
+  cardEndsAt.textContent = `Ends at: ${new Date(data.endsAt).toLocaleString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'Europe/Oslo' })}`;
 
   const cardText = document.createElement('p');
   cardText.classList.add('card-text');
@@ -37,7 +37,7 @@ export function listingTemplate(data) {
     renderSpecificListing(data.id);
   });
 
-  cardBody.append(cardTitle, cardTimeLeft, cardText, bidButton);
+  cardBody.append(cardTitle, cardEndsAt, cardText, bidButton);
 
   card.append(cardImage, cardBody);
 
