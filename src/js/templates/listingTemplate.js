@@ -21,7 +21,7 @@ export function listingTemplate(data) {
 
   const cardEndsAt = document.createElement('p');
   cardEndsAt.classList.add('text-body-secondary');
-  cardEndsAt.textContent = `Ends at: ${new Date(data.endsAt).toLocaleString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'Europe/Oslo' })}`;
+  cardEndsAt.textContent = `Ends at:  ${new Date(data.endsAt).toLocaleString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'Europe/Oslo' })}`;
 
   const cardText = document.createElement('p');
   cardText.classList.add('card-text');

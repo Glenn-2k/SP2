@@ -30,7 +30,7 @@ export function specificListingTemplate(data) {
     const image = document.createElement('img');
     image.src = data.media[0]?.url || 'https://placehold.co/350x200';
     image.alt = data.media[0]?.alt || 'Placeholder Image';
-    image.classList.add('img-fluid');
+    image.classList.add('img-fluid', 'cardImageSize', 'mb-3');
     image.style.maxWidth = '50%';
 
     imageContainer.append(image);
@@ -44,15 +44,15 @@ export function specificListingTemplate(data) {
     descriptionValue.textContent = data.description;
     sellerDescription.append(description, descriptionValue);
 
-    const timeLeft = document.createElement('div');
-    timeLeft.classList.add('mt-3');
+    const auctionEndsAt = document.createElement('div');
+    auctionEndsAt.classList.add('mt-3');
 
-    const timeLeftLabel = document.createElement('strong');
-    timeLeftLabel.textContent = 'Time left on auction:';
-    const timeLeftValue = document.createElement('span');
-    timeLeftValue.textContent = data.endsAt;
+    const auctionEndsAtLabel = document.createElement('strong');
+    auctionEndsAtLabel.textContent = 'Auction ends at: ';
+    const auctionEndsAtValue = document.createElement('span');
+    auctionEndsAtValue.textContent = `${new Date(data.endsAt).toLocaleString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'Europe/Oslo' })}`;
 
-    timeLeft.append(timeLeftLabel, timeLeftValue);
+    auctionEndsAt.append(auctionEndsAtLabel, auctionEndsAtValue);
 
     const latestBidder = document.createElement('div');
     latestBidder.classList.add('mt-3');
@@ -140,7 +140,7 @@ export function specificListingTemplate(data) {
     modalBody.append(
       imageContainer,
       sellerDescription,
-      timeLeft,
+      auctionEndsAt,
       latestBidder,
       biddingHistory,
       bidForm,
