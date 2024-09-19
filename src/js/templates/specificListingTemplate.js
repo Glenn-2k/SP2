@@ -34,8 +34,7 @@ export function specificListingTemplate(data) {
     const image = document.createElement('img');
     image.src = data.media[0]?.url || 'https://placehold.co/350x200';
     image.alt = data.media[0]?.alt || 'Placeholder Image';
-    image.classList.add('img-fluid', 'cardImageSize', 'mb-3');
-    image.style.maxWidth = '50%';
+    image.classList.add('img-fluid', 'cardImageSize', 'mb-3', 'rounded');
 
     imageContainer.append(image);
 
