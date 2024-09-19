@@ -1,5 +1,8 @@
 export function notLoggedIn(token) {
   if (!token) {
+    const noText = document.querySelectorAll('.noText');
+    noText.forEach((noText) => (noText.innerHTML = ''));
+
     const notLoggedIn = document.createElement('div');
     notLoggedIn.classList.add('container', 'mt-5', 'text-center');
 
@@ -11,7 +14,8 @@ export function notLoggedIn(token) {
 
     const notLoggedInMessage = document.createElement('h4');
     notLoggedInMessage.classList.add('mt-5');
-    notLoggedInMessage.textContent = 'You are not logged in.';
+    notLoggedInMessage.textContent =
+      'You are not logged in. Please log in to view this page.';
 
     const notLoggedInButton = document.createElement('button');
     notLoggedInButton.classList.add('btn', 'btn-primary', 'mt-4', 'mb-5');
