@@ -94,32 +94,39 @@
       </nav>
     </header>
     <main>
-      <section
-        class="container-fluid d-flex vh-100 justify-content-center align-items-center"
-      >
-        <form id="searchForm" action="./listings/index.html" method="GET">
-          <div class="card hero-size text-center bg-tertiary">
-            <div class="card-body d-flex flex-column justify-content-center">
-              <h5 class="card-title">What are you looking for?</h5>
-              <div class="mx-auto searchWidth">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your search here.."
-                  aria-label="Search"
-                  id="searchBar"
-                  name="search"
-                />
+      <section class="container-fluid py-5">
+        <div class="row justify-content-center align-items-center min-vh-100">
+          <div class="col-12 col-md-8 col-lg-6">
+            <div class="card bg-tertiary py-5">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-4">What are you looking for?</h5>
+                <form
+                  id="searchForm"
+                  action="./listings/index.html"
+                  method="GET"
+                >
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your search here.."
+                      aria-label="Search"
+                      id="searchBar"
+                      name="search"
+                    />
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      id="searchButton"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
               </div>
-              <button
-                id="searchButton"
-                class="btn btn-primary w-25 mx-auto mt-3"
-              >
-                Search
-              </button>
             </div>
           </div>
-        </form>
+        </div>
       </section>
       <section class="container-fluid mb-5">
         <div class="row">
