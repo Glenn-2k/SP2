@@ -5,6 +5,7 @@
   "main": "vite.config.js",
   "scripts": {
     "start": "vite",
+    "build": "vite build",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "test": "jest",
