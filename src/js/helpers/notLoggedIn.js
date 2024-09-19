@@ -1,4 +1,4 @@
-export function notLoggedIn(token) {
+export function notLoggedInText(token) {
   if (!token) {
     const noText = document.querySelectorAll('.noText');
     noText.forEach((noText) => (noText.innerHTML = ''));
@@ -32,4 +32,15 @@ export function notLoggedIn(token) {
   }
 
   return true;
+}
+
+export function notLoggedInButton(token) {
+  if (!token) {
+    const newListingButton = document.getElementById('newListingButton');
+    newListingButton.classList.add('d-none');
+
+    return true;
+  }
+
+  return false;
 }

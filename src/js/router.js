@@ -6,7 +6,7 @@ import { registerFormListener } from './handlers/registerFormListener';
 import { searchFunction } from './handlers/searchFunction';
 import { updateAvatarHandler } from './handlers/updateAvatarListener';
 import { initPage } from './helpers/isSearchActive';
-import { notLoggedIn } from './helpers/notLoggedIn';
+import { notLoggedInButton, notLoggedInText } from './helpers/notLoggedIn';
 import { renderLimitListings } from './renders/renderLimitListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
@@ -29,7 +29,7 @@ export default function router() {
     createListingsHandler();
     logout();
   } else if (path === '/profile/index.html' || path === '/profile/') {
-    if (!notLoggedIn(token)) {
+    if (!notLoggedInText(token)) {
       return;
     }
     loginFormListener();
@@ -42,6 +42,9 @@ export default function router() {
     logout();
     console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
+    if (!notLoggedInButton(token)) {
+      return;
+    }
     console.log('Listings page');
     loginFormListener();
     getListings();
