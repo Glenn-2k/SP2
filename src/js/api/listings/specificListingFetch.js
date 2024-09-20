@@ -11,6 +11,17 @@ const headers = {
 
 const action = '/listings';
 
+/**
+ * Fetches listing data by ID, including seller and bids details.
+ *
+ * @param {string} id - The ID of the listing to retrieve.
+ * @returns {Promise<Object>} The listing data, including seller and bids details.
+ * @throws Will throw an error if the fetch operation fails.
+ *
+ * @example
+ * authFetchId('12345').then(data => console.log(data)).catch(error => console.error(error));
+ */
+
 export async function authFetchId(id) {
   try {
     const response = await authFetch(
