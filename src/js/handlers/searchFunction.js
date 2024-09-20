@@ -1,8 +1,3 @@
-// function getQueryParam(param) {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   return urlParams.get(param);
-// }
-
 export function searchFunction() {
   const searchForm = document.getElementById('searchForm');
   const searchInput = document.getElementById('searchBar');

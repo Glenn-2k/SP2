@@ -1,6 +1,5 @@
 import { searchFetch } from '../api/listings/searchFetch';
 import { listingTemplate } from '../templates/listingTemplate';
-// import { searchFunction } from '../handlers/searchFunction';
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -18,9 +17,8 @@ export async function searchResults() {
 
   try {
     const searchResults = await searchFetch(searchQuery);
-
-    // const listingsArray = searchResults;
-    // console.log(searchResults);
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
 
     searchResults.forEach((searchQuery) => {
       const listingCard = listingTemplate(searchQuery);
