@@ -6,7 +6,11 @@ import { registerFormListener } from './handlers/registerFormListener';
 import { searchFunction } from './handlers/searchFunction';
 import { updateAvatarHandler } from './handlers/updateAvatarListener';
 import { initPage } from './helpers/isSearchActive';
-import { notLoggedInButton, notLoggedInText } from './helpers/notLoggedIn';
+import {
+  notLoggedIn,
+  notLoggedInButton,
+  notLoggedInText,
+} from './helpers/notLoggedIn';
 import { renderLimitListings } from './renders/renderLimitListings';
 import { renderProfile } from './renders/renderProfile';
 import { renderProfileListings } from './renders/renderProfileListings';
@@ -22,6 +26,7 @@ export default function router() {
 
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
+    notLoggedIn();
     loginFormListener();
     renderLimitListings();
     registerFormListener();
@@ -32,6 +37,7 @@ export default function router() {
     if (!notLoggedInText(token)) {
       return;
     }
+    notLoggedIn();
     loginFormListener();
     registerFormListener();
     renderProfile();
@@ -46,6 +52,7 @@ export default function router() {
       return;
     }
     console.log('Listings page');
+    notLoggedIn();
     loginFormListener();
     getListings();
     createListingsHandler();
