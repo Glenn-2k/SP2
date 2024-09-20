@@ -3,7 +3,6 @@ import { API_BASE, API_AUCTIONS } from '../constants';
 
 const method = 'GET';
 const action = '/profiles';
-// const listings = '/listings';
 
 export async function getProfileListings(profileName) {
   try {
