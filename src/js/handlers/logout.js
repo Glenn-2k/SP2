@@ -11,6 +11,7 @@ export async function logout() {
       event.preventDefault();
       remove('token');
       remove('profile');
+      window.location.href = '/index.html';
 
       loginButton.textContent = 'Log in/register';
       loginButton.href = '#';
