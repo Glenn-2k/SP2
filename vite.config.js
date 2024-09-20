@@ -6,9 +6,9 @@ export default {
     outDir: '../dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
-        profile: resolve(__dirname, 'src/profile/index.html'),
-        listings: resolve(__dirname, 'src/listings/index.html'),
+        main: resolve(__dirname, 'index.html'),
+        profile: resolve(__dirname, 'profile/index.html'),
+        listings: resolve(__dirname, 'listings/index.html'),
       },
     },
   },
