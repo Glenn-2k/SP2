@@ -21,6 +21,8 @@ export async function login(userProfile) {
 
       storage.save('profile', user);
       return data.data;
+    } else {
+      return null;
     }
   } catch (error) {
     console.error('login', error);
