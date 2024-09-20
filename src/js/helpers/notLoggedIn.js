@@ -48,5 +48,10 @@ export function notLoggedIn(token) {
     document.querySelectorAll('.hiddenNav').forEach((hiddenNav) => {
       hiddenNav.classList.add('d-none');
     });
+  } else {
+    document.querySelectorAll('.hiddenNav').forEach((hiddenNav) => {
+      hiddenNav.classList.remove('d-none');
+      hiddenNav.classList.add('d-block');
+    });
   }
 }
