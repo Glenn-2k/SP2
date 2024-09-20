@@ -168,7 +168,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="loginForm" class="was-validated">
+            <form id="loginForm" novalidate>
               <div class="mb-3">
                 <label for="inputEmail" class="form-label fw-medium mb-0"
                   >Email</label
@@ -179,6 +179,7 @@
                   class="form-control"
                   id="inputEmail"
                   placeholder="Enter your email"
+                  required
                 />
                 <div class="invalid-feedback text-primary">
                   Please enter a valid email.
@@ -194,13 +195,19 @@
                   class="form-control"
                   id="inputPassword"
                   placeholder="Please type your password"
+                  required
+                  minlength="8"
                 />
                 <div class="invalid-feedback text-primary">
                   Your password must be at least 8 letters.
                 </div>
               </div>
               <div class="col-6"></div>
-              <button class="btn btn-primary" data-bs-dismiss="modal">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
                 Login
               </button>
             </form>

@@ -4,24 +4,49 @@ export function loginFormListener() {
   const form = document.getElementById('loginForm');
 
   if (form) {
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach((input) => {
+      input.addEventListener('input', function () {
+        if (this.checkValidity()) {
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+        } else {
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+        }
+      });
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const form = event.target;
+      if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+
       const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
 
-      console.log('Form data:', profile);
-
       if (profile.email && profile.password) {
-        const user = await login(profile);
-        console.log('Login user:', user);
+        try {
+          const user = await login(profile);
+          console.log('Login user:', user);
 
-        if (user) {
-          window.location.reload();
-        } else {
-          console.error('Login failed: Invalid credentials or server error');
+          if (user) {
+            window.location.reload();
+          } else {
+            throw new Error('Login failed');
+          }
+        } catch (error) {
+          console.error('Login error:', error);
           alert('Invalid email or password. Please try again.');
+
+          form.classList.remove('was-validated');
+          inputs.forEach((input) => {
+            input.classList.remove('is-valid', 'is-invalid');
+          });
         }
       } else {
         console.error('Email or password is missing');
