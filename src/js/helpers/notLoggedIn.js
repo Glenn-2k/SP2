@@ -51,7 +51,6 @@ export function notLoggedIn(token) {
   } else {
     document.querySelectorAll('.hiddenNav').forEach((hiddenNav) => {
       hiddenNav.classList.remove('d-none');
-      hiddenNav.classList.add('d-block');
     });
   }
 }

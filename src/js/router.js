@@ -26,7 +26,7 @@ export default function router() {
 
   if (path === '/' || path === '/index.html') {
     console.log('Home page');
-    notLoggedIn();
+    notLoggedIn(token);
     loginFormListener();
     renderLimitListings();
     registerFormListener();
@@ -37,7 +37,7 @@ export default function router() {
     if (!notLoggedInText(token)) {
       return;
     }
-    notLoggedIn();
+    notLoggedIn(token);
     loginFormListener();
     registerFormListener();
     renderProfile();
@@ -52,7 +52,7 @@ export default function router() {
       return;
     }
     console.log('Listings page');
-    notLoggedIn();
+    notLoggedIn(token);
     loginFormListener();
     getListings();
     createListingsHandler();
