@@ -2,8 +2,8 @@ import { API_BASE, API_AUCTIONS } from '../constants';
 
 const listings = '/listings';
 const isActive = '?_active=true';
-const sortOrder = 'desc';
-const sortBy = 'created';
+// const sortOrder = 'desc';
+// const sortBy = 'created';
 
 /**
  * Fetches a list of auction listings, sorted and filtered by the provided parameters.
@@ -15,7 +15,7 @@ const sortBy = 'created';
  */
 
 export async function getListings() {
-  const url = `${API_BASE}${API_AUCTIONS}${listings}${isActive}&sort=${sortBy}&sortOrder=${sortOrder}`;
+  const url = `${API_BASE}${API_AUCTIONS}${listings}${isActive}&sort=created&sortOrder=desc`;
   console.log(url);
   const response = await fetch(url);
   const results = await response.json();
