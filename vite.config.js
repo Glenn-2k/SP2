@@ -1,18 +1,20 @@
 import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
-export default {
+export default defineConfig({
   root: resolve(__dirname, 'src'),
   build: {
-    outDir: '../dist',
+    outDir: resolve(__dirname, '../dist'),
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        profile: resolve(__dirname, 'profile/index.html'),
-        listings: resolve(__dirname, 'listings/index.html'),
+        index: resolve(__dirname, 'src/index.html'),
+        profile: resolve(__dirname, 'src/profile/index.html'),
+        listings: resolve(__dirname, 'src/listings/index.html'),
       },
     },
   },
   server: {
     port: 8080,
   },
-};
+});
