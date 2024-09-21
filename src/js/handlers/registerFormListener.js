@@ -1,5 +1,17 @@
 import { register } from '../api/auth/register';
 
+/**
+ * Attaches a submit event listener to the registration form.
+ *
+ * When the form is submitted, the function prevents the default behavior,
+ * gathers the form data, and passes the data to the register function.
+ *
+ * @returns {void}
+ *
+ * @example
+ * registerFormListener();
+ */
+
 export function registerFormListener() {
   const form = document.getElementById('registrationForm');
 
@@ -11,7 +23,6 @@ export function registerFormListener() {
     const profile = Object.fromEntries(formData.entries());
     console.log(profile);
 
-    // sending the profile object to the register function
     register(profile);
   });
 }

@@ -1,5 +1,18 @@
 import { login } from '../api/auth/login';
 
+/**
+ * Adds input validation and submit handling to the login form.
+ *
+ * The function attaches input event listeners to dynamically validate form inputs (e.g., email, password),
+ * and a submit event listener to handle the form submission.
+ * If the form inputs are valid, the user's credentials are submitted for login.
+ *
+ * @returns {void}
+ *
+ * @example
+ * loginFormListener();
+ */
+
 export function loginFormListener() {
   const form = document.getElementById('loginForm');
 

@@ -8,6 +8,25 @@ const headers = {
   'X-Noroff-API-Key': API_KEY,
 };
 
+/**
+ * A custom fetch function that performs an authenticated request with the provided URL and options.
+ *
+ * @param {string} url - The URL to send the request to.
+ * @param {Object} [options={}] - Optional request options, such as body content.
+ * @param {string} [fetchMethod='GET'] - The HTTP method to use for the request (e.g., 'GET', 'POST', 'PUT').
+ * @returns {Promise<Response>} The fetch response object.
+ *
+ * @example
+ * const url = 'https://api.example.com/resource';
+ * const options = {
+ *   body: { key: 'value' }
+ * };
+ * authFetch(url, options, 'POST')
+ *   .then(response => response.json())
+ *   .then(data => console.log(data))
+ *   .catch(error => console.error('Error:', error));
+ */
+
 export async function authFetch(url, options = {}, fetchMethod = 'GET') {
   return fetch(url, {
     headers: headers,
@@ -86,7 +105,6 @@ export async function authFetchBid(url, amount) {
 
     if (!response.ok) {
       if (response.status === 400 && data.errors && data.errors.amount) {
-        // This is likely a "bid too low" error
         throw new Error(data.errors.amount);
       } else {
         throw new Error(data.message || 'Failed to place bid');

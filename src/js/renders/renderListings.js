@@ -3,6 +3,18 @@ import { listingTemplate } from '../templates/listingTemplate';
 
 const loader = document.getElementById('loader');
 
+/**
+ * Renders all auction listings in the UI.
+ *
+ * This function fetches all auction listings and displays them in the container with the ID 'listingsContainer'.
+ * It also handles a loading indicator while fetching and displays an error message if the listings fail to load.
+ *
+ * @returns {void}
+ *
+ * @example
+ * renderListings();
+ */
+
 export async function renderListings() {
   loader.style.display = 'block';
   const listingsContainer = document.getElementById('listingsContainer');

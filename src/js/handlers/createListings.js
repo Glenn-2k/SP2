@@ -1,5 +1,18 @@
 import { createListing } from '../api/listings/createListingFetch';
 
+/**
+ * Handles the submission of new listing forms and creates a new listing.
+ *
+ * Adds a submit event listener to each form with the class 'newListingForm'.
+ * On form submission, it retrieves the title, description, media URL, and end date from the form.
+ * If all fields are filled, it sends a request to create a new listing using the provided data.
+ *
+ * @returns {void}
+ *
+ * @example
+ * createListingsHandler();
+ */
+
 export async function createListingsHandler() {
   const newListingForm = document.querySelectorAll('.newListingForm');
   newListingForm.forEach((newListingForm) => {

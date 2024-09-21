@@ -1,5 +1,27 @@
 import * as bootstrap from 'bootstrap';
 
+/**
+ * Renders the details of a specific auction listing inside a modal, including the image, description, auction end date,
+ * latest bidder, bidding history, and a form to submit a new bid.
+ *
+ * This function dynamically creates and populates the auction modal with relevant information about the auction,
+ * including the ability to place a bid and view the bidding history. It also ensures that the modal is displayed properly.
+ *
+ * @param {Object} data - The data object containing information about the auction listing.
+ * @param {string} data.title - The title of the auction listing.
+ * @param {Array} data.media - An array of media objects, where each object contains a `url` and `alt` attribute for the listing image.
+ * @param {string} data.description - The description of the auction listing.
+ * @param {string} data.endsAt - The date and time when the auction ends.
+ * @param {Array} data.bids - An array of bid objects, each containing a `bidder` and `amount`.
+ * @param {Object} data.bids[].bidder - The bidder object, containing information about the user who placed the bid.
+ * @param {string} data.bids[].bidder.name - The name of the bidder.
+ * @param {number} data.bids[].amount - The bid amount.
+ * @returns {void}
+ *
+ * @example
+ * specificListingTemplate(auctionData);
+ */
+
 export function specificListingTemplate(data) {
   const modalContent = document.querySelectorAll('.auctionModalContainer');
 

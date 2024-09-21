@@ -1,3 +1,31 @@
+/**
+ * Creates a profile UI element with user data, including avatar, name, credits, and buttons for actions.
+ *
+ * This function generates a Bootstrap container with the user's profile information, including the avatar, name, credits,
+ * and the number of listed items. It also provides buttons to change the avatar and create a new listing. If no avatar URL
+ * is provided or the avatar URL matches the default placeholder, a fallback avatar is used.
+ *
+ * @param {Object} data - The data object containing user profile information.
+ * @param {string} data.name - The user's name.
+ * @param {Object} data.avatar - The user's avatar object containing the avatar URL.
+ * @param {string} data.avatar.url - The URL of the user's avatar.
+ * @param {number} data.credits - The user's available credits.
+ * @param {Object} data._count - An object containing count information.
+ * @param {number} data._count.listings - The number of items listed by the user.
+ * @returns {HTMLElement} The generated profile UI element.
+ *
+ * @example
+ * const profileData = {
+ *   name: 'John Doe',
+ *   avatar: { url: 'https://example.com/avatar.jpg' },
+ *   credits: 100,
+ *   _count: { listings: 10 }
+ * };
+ *
+ * const profileElement = profileTemplate(profileData);
+ * document.body.appendChild(profileElement);
+ */
+
 export async function profileTemplate(data) {
   console.log(data);
   const profileWrapper = document.createElement('div');

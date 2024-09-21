@@ -19,6 +19,19 @@ import { load } from './storage';
 
 const token = load('token');
 
+/**
+ * A simple router function that handles navigation and rendering for different pages based on the current path.
+ *
+ * This function listens to the `location.pathname` to determine the current page and triggers specific functions
+ * for rendering content, managing login, logout, and form listeners. The routing logic covers the home, profile,
+ * and listings pages, and provides conditional checks for logged-in users.
+ *
+ * @returns {void}
+ *
+ * @example
+ * router();
+ */
+
 export default function router() {
   console.log('router.js');
 
