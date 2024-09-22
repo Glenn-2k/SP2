@@ -111,12 +111,11 @@ export async function authFetchBid(url, amount) {
       }
     }
 
-    console.log('Bid placed:', data);
     alert('Bid placed successfully');
 
     return data;
   } catch (error) {
-    console.log('Failed to place bid:', error);
+    console.error('Failed to place bid:', error);
     throw new Error(error);
   }
 }
