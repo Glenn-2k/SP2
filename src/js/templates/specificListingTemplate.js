@@ -116,25 +116,31 @@ export function specificListingTemplate(data) {
     const biddingHistoryList = document.createElement('ul');
     biddingHistoryList.classList.add('list-unstyled');
 
-    const limitBids = bids.slice(0, 5);
+    if (token) {
+      const limitBids = bids.slice(0, 5);
 
-    if (limitBids.length > 0) {
-      limitBids.forEach((bid) => {
+      if (limitBids.length > 0) {
+        limitBids.forEach((bid) => {
+          const listItem = document.createElement('li');
+          const bidderName = bid.bidder?.name;
+          const bidAmount = bid.amount || 0;
+
+          listItem.textContent = `${bidderName} - ${bidAmount} credits`;
+
+          biddingHistoryList.append(listItem);
+        });
+      } else {
         const listItem = document.createElement('li');
-        const bidderName = bid.bidder?.name;
-        const bidAmount = bid.amount || 0;
-
-        listItem.textContent = `${bidderName} - ${bidAmount} credits`;
-
+        listItem.textContent = 'No bidding history yet';
         biddingHistoryList.append(listItem);
-      });
-    } else {
-      const listItem = document.createElement('li');
-      listItem.textContent = 'No bidding history yet';
-      biddingHistoryList.append(listItem);
-    }
+      }
 
-    biddingHistory.append(biddingHistoryLabel, biddingHistoryList);
+      biddingHistory.append(biddingHistoryLabel, biddingHistoryList);
+    } else {
+      const notLoggedInMessage = document.createElement('p');
+      notLoggedInMessage.textContent = 'Please log in to view bidding history';
+      biddingHistory.append(notLoggedInMessage);
+    }
 
     const bidForm = document.createElement('div');
     bidForm.classList.add('mt-3');
