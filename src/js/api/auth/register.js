@@ -29,5 +29,8 @@ export async function register(name, email, password) {
   });
 
   const result = await response.json();
-  return result;
+  return {
+    success: response.ok,
+    data: result,
+  };
 }
