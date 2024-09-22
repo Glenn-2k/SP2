@@ -33,15 +33,22 @@ An online auction platform where users can bid on various items, create listings
 1. Clone the repository:
    ```bash
    git clone https://github.com/Glenn-2k/SP2.git
+   ```
 
 2. Navigate to the project directory:
-   ```bash cd SP2
+   ```bash
+   cd SP2
+   ```
 
 3. Install dependencies
-   ```bash npm install
+   ```bash
+   npm install
+   ```
 
 4. Start the development server
-   ```bash npm run start
+   ```bash
+   npm run start
+   ```
 
 5. Open your browser and go to http://localhost:3000.
 
