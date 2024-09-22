@@ -1,4 +1,5 @@
 import { renderSpecificListing } from '../renders/renderSpecificListing';
+import { load } from '../storage';
 
 /**
  * Creates an auction listing card element with the provided data.
@@ -28,6 +29,7 @@ import { renderSpecificListing } from '../renders/renderSpecificListing';
  */
 
 export function listingTemplate(data) {
+  const token = load('token');
   const cardWrapper = document.createElement('div');
   cardWrapper.classList.add(
     'col-xl-3',
@@ -79,6 +81,9 @@ export function listingTemplate(data) {
   bidButton.dataset.bsTarget = '#auctionModal';
   bidButton.href = '#';
   bidButton.textContent = 'Bid Now';
+  if (!token) {
+    bidButton.textContent = 'View';
+  }
   bidButton.addEventListener('click', () => {
     renderSpecificListing(data.id);
   });

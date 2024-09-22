@@ -1,4 +1,5 @@
 import * as bootstrap from 'bootstrap';
+import { load } from '../storage';
 
 /**
  * Renders the details of a specific auction listing inside a modal, including the image, description, auction end date,
@@ -24,6 +25,7 @@ import * as bootstrap from 'bootstrap';
 
 export function specificListingTemplate(data) {
   const modalContent = document.querySelectorAll('.auctionModalContainer');
+  const token = load('token');
 
   modalContent.forEach((modalContent) => {
     modalContent.innerHTML = '';
@@ -141,6 +143,9 @@ export function specificListingTemplate(data) {
 
     const inputGroup = document.createElement('div');
     inputGroup.classList.add('input-group');
+    if (!token) {
+      inputGroup.style.display = 'none';
+    }
 
     const input = document.createElement('input');
     input.type = 'number';

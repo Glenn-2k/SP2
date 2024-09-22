@@ -1,7 +1,7 @@
 import { getListings } from '../api/listings/getListings';
 import { listingTemplate } from '../templates/listingTemplate';
 
-const limit = 3;
+const limit = 4;
 
 const loader = document.getElementById('loader');
 
