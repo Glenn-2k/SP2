@@ -35,7 +35,6 @@ export async function login(userProfile) {
 
       body: JSON.stringify(userProfile),
     });
-    console.log(response);
     if (response.ok) {
       const data = await response.json();
       const { accessToken, ...user } = data.data;
