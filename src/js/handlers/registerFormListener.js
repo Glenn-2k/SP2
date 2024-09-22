@@ -24,5 +24,6 @@ export function registerFormListener() {
     console.log(profile);
 
     register(profile);
+    window.location.href = '#loginModalToggle';
   });
 }
