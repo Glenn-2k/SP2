@@ -47,7 +47,8 @@ export function listingTemplate(data) {
 
   const cardImage = document.createElement('img');
   cardImage.classList.add('card-img-top');
-  cardImage.src = data.media[0]?.url || 'https://placehold.co/350x200';
+  cardImage.src =
+    data.media[0]?.url || 'https://fakeimg.pl/400x300?text=Placeholder';
   cardImage.alt = data.media[0]?.alt || 'Placeholder Image';
 
   const cardBody = document.createElement('div');

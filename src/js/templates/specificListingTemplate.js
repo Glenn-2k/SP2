@@ -56,7 +56,8 @@ export function specificListingTemplate(data) {
     imageContainer.classList.add('text-center');
 
     const image = document.createElement('img');
-    image.src = data.media[0]?.url || 'https://placehold.co/350x200';
+    image.src =
+      data.media[0]?.url || 'https://fakeimg.pl/400x300?text=Placeholder';
     image.alt = data.media[0]?.alt || 'Placeholder Image';
     image.classList.add('img-fluid', 'cardImageSize', 'mb-3', 'rounded');
 
