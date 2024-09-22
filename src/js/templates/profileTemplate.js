@@ -29,7 +29,6 @@ import avatar from '../../images/avatar.png';
  */
 
 export async function profileTemplate(data) {
-  console.log(data);
   const profileWrapper = document.createElement('div');
   profileWrapper.classList.add('container', 'mt-5', 'text-center');
 
