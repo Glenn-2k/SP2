@@ -33,12 +33,9 @@ const token = load('token');
  */
 
 export default function router() {
-  console.log('router.js');
-
   const path = location.pathname;
 
   if (path === '/' || path === '/index.html') {
-    console.log('Home page');
     notLoggedIn(token);
     loginFormListener();
     renderLimitListings();
@@ -59,12 +56,10 @@ export default function router() {
     updateAvatarHandler();
     createListingsHandler();
     logout();
-    console.log('Profile page');
   } else if (path === '/listings/index.html' || path === '/listings/') {
     if (notLoggedInButton(token)) {
       return;
     }
-    console.log('Listings page');
     notLoggedIn(token);
     loginFormListener();
     getListings();
