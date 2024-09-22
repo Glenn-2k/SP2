@@ -45,7 +45,6 @@ export function loginFormListener() {
       if (profile.email && profile.password) {
         try {
           const user = await login(profile);
-          console.log('Login user:', user);
 
           if (user) {
             window.location.reload();

@@ -21,7 +21,6 @@ import { validateBid } from '../helpers/validateBid';
  */
 
 export async function placeBid(id, data) {
-  console.log(data);
   const amountInput = document.getElementById('bidAmount');
 
   const lastBid = data.bids.length > 0 ? data.bids[0].amount : 0;
@@ -45,5 +44,4 @@ export async function placeBid(id, data) {
   } catch (error) {
     console.error('Failed to place bid:', error);
   }
-  console.log('fetch ville ha kjørt no');
 }

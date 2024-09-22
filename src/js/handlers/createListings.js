@@ -24,8 +24,6 @@ export async function createListingsHandler() {
       let mediaUrl = event.target.imageGallery.value.trim();
       let endsAt = event.target.deadline.value.trim();
 
-      console.log('listingform:', newListingForm);
-
       if (title && description && mediaUrl && endsAt) {
         try {
           const response = await createListing({
@@ -34,7 +32,6 @@ export async function createListingsHandler() {
             media: [{ url: mediaUrl, alt: title }],
             endsAt,
           });
-          console.log(response);
 
           if (!response) {
             console.error('Failed to create listing');
