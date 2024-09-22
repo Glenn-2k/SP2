@@ -19,8 +19,6 @@ export async function searchFetch(searchQuery) {
     const response = await fetch(url);
     const results = await response.json();
 
-    // console.log(results);
-
     return results.data;
   } catch (error) {
     console.error(error);

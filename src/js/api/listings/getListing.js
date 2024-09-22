@@ -17,8 +17,6 @@ export async function getListing(id) {
     const url = `${API_BASE}${API_AUCTIONS}${listings}/${id}`;
     const response = await fetch(url);
 
-    console.log(response);
-
     const json = await response.json();
 
     return json.data;

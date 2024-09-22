@@ -26,7 +26,6 @@ export async function createListing(listingData) {
   }
 
   const data = await authFetchNewListing(url, listingData, 'POST');
-  console.log(data);
 
   return data;
 }
