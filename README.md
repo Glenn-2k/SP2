@@ -2,6 +2,8 @@
 
 An online auction platform where users can bid on various items, create listings, and manage their profile. This project was created as part of the Noroff Frontend developer semester project 2 and demonstrates key concepts in API interaction, client-side rendering, authentication, and form validation.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9243bcd1-f4df-4bd1-ad59-96ebc94e7d2c/deploy-status)](https://app.netlify.com/sites/glennsp2/deploys)
+
 ## Features
 
 - **User Authentication**: Users can register and log in to their accounts with a required `@stud.noroff.no` email address. Logged-in users have access to additional features like creating listings and placing bids.
