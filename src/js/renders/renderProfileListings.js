@@ -43,7 +43,6 @@ export async function renderProfileListings() {
     listingsArray.forEach((data) => {
       const listingCard = listingTemplate(data);
       profileListingsContainer.append(listingCard);
-      console.log(data);
     });
   } catch (error) {
     console.error(error);

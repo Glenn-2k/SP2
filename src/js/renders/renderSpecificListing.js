@@ -20,7 +20,6 @@ export async function renderSpecificListing(id) {
 
   specificListingTemplate(listingData);
 
-  console.log('listingData:', listingData);
   const form = document.getElementById('bidForm');
 
   if (form) {

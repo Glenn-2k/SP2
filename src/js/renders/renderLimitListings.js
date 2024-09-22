@@ -29,7 +29,6 @@ export async function renderLimitListings() {
     listings.slice(0, limit).forEach((data) => {
       const listingCard = listingTemplate(data);
       listingsContainer.append(listingCard);
-      console.log(data);
     });
   } catch (error) {
     console.error(error);

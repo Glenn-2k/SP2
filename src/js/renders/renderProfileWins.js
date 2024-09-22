@@ -29,8 +29,6 @@ export async function renderProfileWins() {
   try {
     const myWins = await getProfileWins(storedProfileName);
 
-    console.log('myWins:', myWins);
-
     const winningsArray = myWins.data;
 
     if (winningsArray.length === 0) {
@@ -41,7 +39,6 @@ export async function renderProfileWins() {
     winningsArray.forEach((data) => {
       const listingCard = listingTemplate(data);
       myWinsContainer.append(listingCard);
-      console.log(data);
     });
   } catch (error) {
     console.error(error);
